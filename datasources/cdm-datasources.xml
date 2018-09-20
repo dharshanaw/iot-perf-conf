@@ -29,12 +29,13 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:h2:repository/database/WSO2DM_DB;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE;LOCK_TIMEOUT=60000</url>
-                    <username>wso2carbon</username>
-                    <password>wso2carbon</password>
-                    <driverClassName>org.h2.Driver</driverClassName>
-                    <maxActive>50</maxActive>
+                    <url>jdbc:mysql://192.168.52.104:3306/PERF_DM_DS</url>
+                    <username>root</username>
+                    <password>admin</password>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <maxActive>500</maxActive>
                     <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>
@@ -49,12 +50,13 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:h2:repository/database/WSO2DM_ARCHIVAL_DS;DB_CLOSE_ON_EXIT=FALSE</url>
-                    <username>wso2carbon</username>
-                    <password>wso2carbon</password>
-                    <driverClassName>org.h2.Driver</driverClassName>
-                    <maxActive>50</maxActive>
+                    <url>jdbc:mysql://192.168.52.104:3306/PERF_DM_ARCHIVAL_DS</url>
+                    <username>root</username>
+                    <password>admin</password>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <maxActive>500</maxActive>
                     <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>

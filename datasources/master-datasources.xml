@@ -51,33 +51,13 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:h2:repository/database/WSO2CARBON_DB;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE</url>
-                    <username>wso2carbon</username>
-                    <password>wso2carbon</password>
-                    <driverClassName>org.h2.Driver</driverClassName>
-                    <maxActive>50</maxActive>
+                    <url>jdbc:mysql://192.168.52.104:3306/PERF_UM_DB</url>
+                    <username>root</username>
+                    <password>admin</password>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <maxActive>500</maxActive>
                     <maxWait>60000</maxWait>
-                    <testOnBorrow>true</testOnBorrow>
-                    <validationQuery>SELECT 1</validationQuery>
-                    <validationInterval>30000</validationInterval>
-                </configuration>
-            </definition>
-        </datasource>
-
-        <datasource>
-            <name>WSO2_CDM_DB</name>
-            <description>The datasource used for registry and user manager</description>
-            <jndiConfig>
-                <name>jdbc/WSO2_CDM_DB</name>
-            </jndiConfig>
-            <definition type="RDBMS">
-                <configuration>
-                    <url>jdbc:h2:repository/database/WSO2CARBON_DB;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE</url>
-                    <username>wso2carbon</username>
-                    <password>wso2carbon</password>
-                    <driverClassName>org.h2.Driver</driverClassName>
-                    <maxActive>50</maxActive>
-                    <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>
@@ -93,33 +73,36 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:h2:repository/database/WSO2CARBON_DB;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE</url>
-                    <username>wso2carbon</username>
-                    <password>wso2carbon</password>
-                    <driverClassName>org.h2.Driver</driverClassName>
-                    <maxActive>50</maxActive>
+                    <url>jdbc:mysql://192.168.52.104:3306/PERF_IDN_DB</url>
+                    <username>root</username>
+                    <password>admin</password>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <maxActive>500</maxActive>
                     <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>
                 </configuration>
+
             </definition>
         </datasource>
 
         <datasource>
-            <name>WSO2_IDENTITY_DB</name>
+            <name>WSO2_REGISTRY_DB</name>
             <description>The datasource used for registry and user manager</description>
             <jndiConfig>
-                <name>jdbc/WSO2_IDENTITY_DB</name>
+                <name>jdbc/WSO2_REGISTRY_DB</name>
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:h2:repository/database/WSO2CARBON_DB;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE</url>
-                    <username>wso2carbon</username>
-                    <password>wso2carbon</password>
-                    <driverClassName>org.h2.Driver</driverClassName>
-                    <maxActive>50</maxActive>
+                    <url>jdbc:mysql://192.168.52.104:3306/PERF_REG_DB</url>
+                    <username>root</username>
+                    <password>admin</password>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <maxActive>500</maxActive>
                     <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>
@@ -135,12 +118,13 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:h2:repository/database/WSO2APPM_DB;DB_CLOSE_ON_EXIT=FALSE</url>
-                    <username>wso2carbon</username>
-                    <password>wso2carbon</password>
-                    <driverClassName>org.h2.Driver</driverClassName>
-                    <maxActive>50</maxActive>
+                    <url>jdbc:mysql://192.168.52.104:3306/PERF_APPM_DB</url>
+                    <username>root</username>
+                    <password>admin</password>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <maxActive>500</maxActive>
                     <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>
@@ -156,12 +140,13 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:h2:repository/database/WSO2AM_DB;DB_CLOSE_ON_EXIT=FALSE</url>
-                    <username>wso2carbon</username>
-                    <password>wso2carbon</password>
-                    <driverClassName>org.h2.Driver</driverClassName>
-                    <maxActive>50</maxActive>
+                    <url>jdbc:mysql://192.168.52.104:3306/PERF_APIM_DB</url>
+                    <username>root</username>
+                    <password>admin</password>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <maxActive>500</maxActive>
                     <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>
@@ -177,16 +162,16 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:h2:repository/database/WSO2MB_DB;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=60000</url>
-                    <username>wso2carbon</username>
-                    <password>wso2carbon</password>
-                    <driverClassName>org.h2.Driver</driverClassName>
-                    <maxActive>50</maxActive>
+                    <url>jdbc:mysql://192.168.52.104:3306/PERF_MB_STORE_DB</url>
+                    <username>root</username>
+                    <password>admin</password>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <maxActive>500</maxActive>
                     <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>
-                    <defaultAutoCommit>false</defaultAutoCommit>
                 </configuration>
             </definition>
         </datasource>
@@ -198,12 +183,16 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:h2:repository/database/ES_STORAGE;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=60000</url>
-                    <username>wso2carbon</username>
-                    <password>wso2carbon</password>
-                    <driverClassName>org.h2.Driver</driverClassName>
-                    <maxActive>50</maxActive>
+                    <url>jdbc:mysql://192.168.52.104:3306/PERF_JAGH2</url>
+                    <username>root</username>
+                    <password>admin</password>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <maxActive>500</maxActive>
                     <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
+                    <testOnBorrow>true</testOnBorrow>
+                    <validationQuery>SELECT 1</validationQuery>
+                    <validationInterval>30000</validationInterval>
                 </configuration>
             </definition>
         </datasource>
@@ -215,12 +204,13 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:h2:repository/database/WSO2_SOCIAL_DB;DB_CLOSE_ON_EXIT=FALSE</url>
-                    <username>wso2carbon</username>
-                    <password>wso2carbon</password>
-                    <driverClassName>org.h2.Driver</driverClassName>
-                    <maxActive>50</maxActive>
+                    <url>jdbc:mysql://192.168.52.104:3306/PERF_SOCIAL_DB</url>
+                    <username>root</username>
+                    <password>admin</password>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                    <maxActive>500</maxActive>
                     <maxWait>60000</maxWait>
+                    <minIdle>5</minIdle>
                     <testOnBorrow>true</testOnBorrow>
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>

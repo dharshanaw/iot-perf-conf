@@ -34,6 +34,28 @@
         <dataSource>jdbc/WSO2CarbonDB</dataSource>
     </dbConfig>
 
+    <dbConfig name="mounted_registry">
+        <dataSource>jdbc/WSO2_REGISTRY_DB</dataSource>
+    </dbConfig>
+
+    <remoteInstance url="https://localhost:9443/registry">
+        <id>instanceid</id>
+        <dbConfig>mounted_registry</dbConfig>
+        <readOnly>false</readOnly>
+        <enableCache>true</enableCache>
+        <registryRoot>/</registryRoot>
+        <cacheId>root@jdbc:jdbc:mysql://192.168.52.104:3306/PERF_REG_DB?autoReconnect=true</cacheId>
+    </remoteInstance>
+
+    <mount path="/_system/config" overwrite="true">
+        <instanceId>instanceid</instanceId>
+        <targetPath>/_system/apimconfig</targetPath>
+    </mount>
+    <mount path="/_system/governance" overwrite="true">
+        <instanceId>instanceid</instanceId>
+        <targetPath>/_system/governance</targetPath>
+    </mount>
+
     <!-- This handler provides the feature to add a simlink to a given resource -->
     <!--
      <handler class="org.wso2.carbon.registry.extensions.handlers.ExtensionsSymLinkHandler">
